@@ -55,7 +55,7 @@ $(function () {
 			}
 			layer.msg(res.message);
 			// 跳转后台主页
-			// location.href = 'index.html';
+			location.href = 'index.html';
 		});
 	});
 });
