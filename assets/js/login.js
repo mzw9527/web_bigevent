@@ -35,7 +35,7 @@ $(function () {
 		e.preventDefault();
 		// 优化代码，把参数对象赋值变量
 		var data = { username: $('.registerbox [name=username]').val(), password: $('.registerbox [name=password]').val() };
-		$.post('http://api-breakingnews-web.itheima.net/api/reguser', data, function (res) {
+		$.post('/api/reguser', data, function (res) {
 			// console.log(res);
 			if (res.status !== 0) {
 				return layer.msg(res.message);
@@ -54,6 +54,9 @@ $(function () {
 				return layer.msg(res.message);
 			}
 			layer.msg(res.message);
+			// console.log(res.token);
+			// 将登陆成功的得到的token字符串，保存到本地中
+			localStorage.setItem('token', res.token);
 			// 跳转后台主页
 			location.href = 'index.html';
 		});
