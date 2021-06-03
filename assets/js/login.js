@@ -54,6 +54,7 @@ $(function () {
 				return layer.msg(res.message);
 			}
 			layer.msg(res.message);
+			localStorage.setItem('token', res.token);
 			// 跳转后台主页
 			location.href = 'index.html';
 		});
