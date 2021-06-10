@@ -35,7 +35,7 @@ $(function () {
 		e.preventDefault();
 		// 优化代码，把参数对象赋值变量
 		var data = { username: $('.registerbox [name=username]').val(), password: $('.registerbox [name=password]').val() };
-		$.post('http://api-breakingnews-web.itheima.net/api/reguser', data, function (res) {
+		$.post('/api/reguser', data, function (res) {
 			// console.log(res);
 			if (res.status !== 0) {
 				return layer.msg(res.message);
